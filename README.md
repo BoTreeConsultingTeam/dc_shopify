@@ -1,24 +1,25 @@
-# README
+This is simple app which would create products feed as per the [schema](http://verticals.dynamiccreative.com/v1/retail_standard.xsd) by fetching products from a shopify store.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Installation
 
-Things you may want to cover:
+Run `bundle` from the home directory
 
-* Ruby version
+#### Configuration
 
-* System dependencies
+Need to set following environment variables to connect with shopify API
+1. `SHOPIFY_API_KEY`
+2. `SHOPIFY_API_PASSWORD`
+3. `SHOP_NAME`
 
-* Configuration
+#### How to run the test suite
 
-* Database creation
+Run following command From the root directory
 
-* Database initialization
+`SHOPIFY_API_KEY=<SHOPIFY API KEY> SHOPIFY_API_PASSWORD=<SHOPIFY API PASSWORD> SHOP_NAME=<STORES NAME YOU USE TO ACCESS FROM BROWSER> spring rspec spec`
 
-* How to run the test suite
+**Note:** The current version of VCR creates [issue](https://github.com/vcr/vcr/issues/637) with Ruby 2.4.1 but highly recommend to use it to avoid flaky and slow tests.  
 
-* Services (job queues, cache servers, search engines, etc.)
+#### How to run the app
 
-* Deployment instructions
-
-* ...
+1. Start Server using `rails s` assuming all required environment variables are already set
+2. Hit `http://localhost:3000` in browser

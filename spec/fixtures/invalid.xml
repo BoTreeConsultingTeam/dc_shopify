@@ -1,0 +1,8 @@
+<items>
+  <item>
+    <sku>123456</sku>
+    <!--<first_category url_value="suits">Suits</first_category>-->
+    <brand url_value="brand=123">Hugo Boss</brand>
+    <price>1999</price>
+  </item>
+</items>
