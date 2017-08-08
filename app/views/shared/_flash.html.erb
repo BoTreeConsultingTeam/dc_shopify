@@ -1,0 +1,27 @@
+<% unless flash.empty? %>
+  <div class="flash_msg alert_msg">
+    <% flash.each do |name, message| %>
+      <div class="alert alert-<%= name %>">
+        <a class="close" "data-dismiss"="alert" href="javascript:;" >×</a>
+        <ul class="flash-list-style">
+          <% if message.is_a?Array %>
+            <% message.each do |msg| %>
+              <li>
+                <%= msg.html_safe%>
+              </li>
+            <% end %>
+          <% else %>
+            <li>
+              <%= message.html_safe%>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<script type="text/javascript">
+  $('.close').click(function(){
+    $('.flash_msg').remove();
+  });
+</script>

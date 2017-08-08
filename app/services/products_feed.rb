@@ -1,9 +1,8 @@
 class ProductsFeed
-  ShopifyAPI::Base.site = "https://#{ENV['SHOPIFY_API_KEY']}:#{ENV['SHOPIFY_API_PASSWORD']}@#{ENV['SHOP_NAME']}.myshopify.com/admin".freeze
-
   attr_reader :feed
 
-  def initialize
+  def initialize(store_credential)
+    ShopifyAPI::Base.site = "https://#{store_credential.api_key}:#{store_credential.api_password}@#{store_credential.store_name}.myshopify.com/admin"
     ShopifyAPI::Shop.current
   end
 
